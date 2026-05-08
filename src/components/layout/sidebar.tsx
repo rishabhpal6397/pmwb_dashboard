@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   LayoutDashboard,
   FileText,
@@ -20,8 +21,8 @@ import {
 } from "lucide-react";
 
 const menuItems = [
-  { name: "Main Page", icon: LayoutDashboard },
-  { name: "Project Info", icon: FileText },
+  { name: "Main Page", icon: LayoutDashboard, path: "/" },
+  { name: "Project Info", icon: FileText, path: "/project-info" },
   { name: "PSR", icon: BarChart3 },
   { name: "Training", icon: GraduationCap },
   { name: "Resources", icon: Users },
@@ -45,7 +46,11 @@ const Sidebar = () => {
     <div
       className={`${
         collapsed ? "w-20" : "w-64"
-      } bg-white h-screen shadow-md transition-all duration-300`}
+      }bg-white
+          h-screen
+          border-r border-gray-200
+          flex-shrink-0
+          transition-all duration-300`}
     >
       {/* TOGGLE */}
       <div className="flex justify-between items-center p-4">
@@ -62,14 +67,33 @@ const Sidebar = () => {
           const Icon = item.icon;
 
           return (
-            <li
-              key={index}
-              className="group flex items-center gap-3 p-2 rounded cursor-pointer hover:bg-gray-100"
-            >
-              <Icon className="w-5 h-5 text-gray-600 group-hover:text-black" />
-
-              {!collapsed && (
-                <span className="text-sm">{item.name}</span>
+            <li key={index}>
+              {item.path ? (
+                <Link
+                  to={item.path}
+                  className="group flex items-center gap-3
+                              px-3 py-2
+                              rounded-lg
+                              text-gray-600
+                              hover:bg-blue-50
+                              hover:text-blue-600
+                              transition-colors duration-200"
+                >
+                  <Icon className="w-5 h-5" />
+                  {!collapsed && <span className="text-sm">{item.name}</span>}
+                </Link>
+              ) : (
+                <div className="group flex items-center gap-3
+                                px-3 py-2
+                                rounded-lg
+                                cursor-pointer
+                                text-gray-600
+                                hover:bg-blue-50
+                                hover:text-blue-600
+                                transition-colors duration-200">
+                  <Icon className="w-5 h-5 text-gray-600 group-hover:text-black" />
+                  {!collapsed && <span className="text-sm">{item.name}</span>}
+                </div>
               )}
             </li>
           );

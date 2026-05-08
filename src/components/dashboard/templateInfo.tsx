@@ -11,7 +11,7 @@ const TemplateInfo = () => {
     author: "QMG",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
