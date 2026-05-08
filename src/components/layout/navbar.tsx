@@ -6,7 +6,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full bg-white shadow flex justify-between items-center px-6 py-3">
+    <div className="fixed w-full top-0 left-0 bg-white z-50 shadow flex justify-between items-center px-6 py-3">
       
       {/* LEFT SIDE (LOGO SPACE) */}
       <div className="flex items-center gap-3">

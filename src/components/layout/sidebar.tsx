@@ -39,18 +39,21 @@ const menuItems = [
   { name: "Performance Metrics", icon: TrendingUp }
 ];
 
-const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+const Sidebar = ({ collapsed, setCollapsed }: { collapsed: boolean; setCollapsed: (value: boolean) => void }) => {
 
   return (
     <div
       className={`${
         collapsed ? "w-20" : "w-64"
       }bg-white
-          h-screen
-          border-r border-gray-200
-          flex-shrink-0
-          transition-all duration-300`}
+        fixed top-16 left-0
+        h-[calc(100vh-64px)]
+        border-r border-gray-200
+        flex-shrink-0
+        overflow-y-auto
+        transition-all duration-300
+        shadow-sm
+        `}
     >
       {/* TOGGLE */}
       <div className="flex justify-between items-center p-4">

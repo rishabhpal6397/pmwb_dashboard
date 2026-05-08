@@ -3,6 +3,7 @@ import Navbar from "../components/layout/navbar";
 import Sidebar from "../components/layout/sidebar";
 
 export default function ProjectManagementTables() {
+    const [collapsed, setCollapsed] = useState(false);
   const [projectInfo, setProjectInfo] = useState({
     projectName: "",
     codePIN: "",
@@ -98,16 +99,23 @@ export default function ProjectManagementTables() {
 
       <div className="flex">
       {/* Sidebar */}
-      <Sidebar />
+      <Sidebar collapsed={collapsed}
+                setCollapsed={setCollapsed}/>
 
-            <div className="p-4 space-y-4 bg-gray-100 min-h-screen overflow-x-hidden">
+            <div className={`${collapsed ? "ml-20" : "ml-64"}
+                         mt-16
+                         p-4
+                         space-y-4
+                         bg-gray-100
+                         min-h-screen
+                         overflow-x-hidden`}>
             <h1 className="text-3xl font-bold text-center">Project Management Information</h1>
 
             {/* PROJECT INFORMATION */}
             <div className="bg-white shadow-lg rounded-2xl p-6 overflow-x-auto">
                 <h2 className="text-2xl font-semibold mb-4">Project Information</h2>
                 <table className="w-full border border-gray-300 text-sm">
-                <thead className="bg-gray-200">
+                <thead className="bg-gray-300">
                     <tr>
                     <th className="border p-3">Project Name</th>
                     <th className="border p-3">Code / PIN</th>
@@ -132,7 +140,7 @@ export default function ProjectManagementTables() {
             <div className="bg-white shadow-lg rounded-2xl p-6 overflow-x-auto">
                 <h2 className="text-2xl font-semibold mb-4">Customer Information</h2>
                 <table className="w-full border border-gray-300 text-sm">
-                <thead className="bg-gray-200">
+                <thead className="bg-gray-300">
                     <tr>
                     <th className="border p-3">Customer Name</th>
                     <th className="border p-3">Address</th>
@@ -155,7 +163,7 @@ export default function ProjectManagementTables() {
             <div className="bg-white shadow-lg rounded-2xl p-6 overflow-x-auto">
                 <h2 className="text-2xl font-semibold mb-4">Project Dates</h2>
                 <table className="w-full border border-gray-300 text-sm">
-                <thead className="bg-gray-200">
+                <thead className="bg-gray-300">
                     <tr>
                     <th className="border p-3">Project Start Date in SOW</th>
                     <th className="border p-3">Planned Start Date</th>
@@ -186,7 +194,7 @@ export default function ProjectManagementTables() {
             <div className="bg-white shadow-lg rounded-2xl p-6 overflow-x-auto">
                 <h2 className="text-2xl font-semibold mb-4">Effort Details</h2>
                 <table className="w-full border border-gray-300 text-sm">
-                <thead className="bg-gray-200">
+                <thead className="bg-gray-300">
                     <tr>
                     <th className="border p-3">Estimated Hours</th>
                     <th className="border p-3">Actual Efforts Consumed (Hrs)</th>
@@ -209,7 +217,7 @@ export default function ProjectManagementTables() {
             <div className="bg-white shadow-lg rounded-2xl p-6 overflow-x-auto">
                 <h2 className="text-2xl font-semibold mb-4">FTE Details</h2>
                 <table className="w-full border border-gray-300 text-sm">
-                <thead className="bg-gray-200">
+                <thead className="bg-gray-300">
                     <tr>
                     <th className="border p-3">SOW Onsite FTEs</th>
                     <th className="border p-3">SOW Offshore FTEs</th>
@@ -242,7 +250,7 @@ export default function ProjectManagementTables() {
                 </div>
 
                 <table className="w-full border border-gray-300 text-sm">
-                <thead className="bg-blue-700 text-white">
+                <thead className="bg-gray-300">
                     <tr>
                     <th className="border p-3">Date</th>
                     <th className="border p-3">Version</th>
