@@ -30,7 +30,7 @@ const Dashboard = () => {
                          mt-16
                          min-h-screen
                         bg-gray-50
-                          transition-all duration-300
+                          
                           p-6 
                           space-y-6`}>
           <AlertBar />
@@ -39,7 +39,9 @@ const Dashboard = () => {
           {/* Summary Cards */}
           <div className="grid grid-cols-4 gap-4">
           <SummaryCard title="Project Health" value="Good" type="health" />
-          <SummaryCard title="Progress" value="72%" type="progress" />
+          <SummaryCard title="Progress" value="72%" type="progress" 
+          
+          />
           <SummaryCard title="Risks" value="3" type="risk" />
           <SummaryCard title="Issues" value="2" type="issue" />
         </div>
