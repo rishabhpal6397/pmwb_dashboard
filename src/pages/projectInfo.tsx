@@ -2,7 +2,7 @@ import { useState } from "react";
 import Navbar from "../components/layout/navbar";
 import Sidebar from "../components/layout/sidebar";
 
-export default function ProjectManagementTables() {
+export default function ProjectInfo() {
     const [collapsed, setCollapsed] = useState(false);
   const [projectInfo, setProjectInfo] = useState({
     projectName: "",

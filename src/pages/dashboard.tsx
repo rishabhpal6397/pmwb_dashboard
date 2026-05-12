@@ -29,9 +29,9 @@ const Dashboard = () => {
                          flex-1
                          mt-16
                          min-h-screen
-                        bg-gray-50
-                          
+                        bg-gray-100
                           p-6 
+                          w-full
                           space-y-6`}>
           <AlertBar />
           <TemplateInfo />

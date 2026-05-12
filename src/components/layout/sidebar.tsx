@@ -9,13 +9,12 @@ import {
   Activity,
   AlertTriangle,
   CalendarDays,
-  Settings,
-  CheckSquare,
   Bug,
   Lightbulb,
   ClipboardCheck,
   Flag,
   BookOpen,
+  FileWarning,
   TrendingUp,
   Menu,
 } from "lucide-react";
@@ -23,14 +22,13 @@ import {
 const menuItems = [
   { name: "Main Page", icon: LayoutDashboard, path: "/" },
   { name: "Project Info", icon: FileText, path: "/project-info" },
-  { name: "PSR", icon: BarChart3 },
+  { name: "PSR", icon: BarChart3 , path:"/psr"},
   { name: "Training", icon: GraduationCap },
   { name: "Resources", icon: Users },
   { name: "Metrics Planning & Tracking", icon: Activity },
   { name: "Risk Management", icon: AlertTriangle },
   { name: "Size, Schedule & Effort", icon: CalendarDays },
-  { name: "Control Panel", icon: Settings },
-  { name: "Quality of Work", icon: CheckSquare },
+  { name: "Risk Management-\nMethodology", icon: FileWarning },
   { name: "Issue Management", icon: Bug },
   { name: "Opportunity Tracker", icon: Lightbulb },
   { name: "Verification Data & Summary", icon: ClipboardCheck },
@@ -50,7 +48,7 @@ const Sidebar = ({ collapsed, setCollapsed }: { collapsed: boolean; setCollapsed
         h-[calc(100vh-64px)]
         border-r border-gray-200
         flex-shrink-0
-        overflow-y-auto
+        overflow-y-auto 
         transition-all duration-300
         shadow-sm
         `}
@@ -65,7 +63,7 @@ const Sidebar = ({ collapsed, setCollapsed }: { collapsed: boolean; setCollapsed
       </div>
 
       {/* MENU */}
-      <ul className="space-y-2 px-2">
+      <ul className="space-y-2 px-2 ">
         {menuItems.map((item, index) => {
           const Icon = item.icon;
 
@@ -82,8 +80,8 @@ const Sidebar = ({ collapsed, setCollapsed }: { collapsed: boolean; setCollapsed
                               hover:text-blue-600
                               transition-colors duration-200"
                 >
-                  <Icon className="w-5 h-5" />
-                  {!collapsed && <span className="text-sm">{item.name}</span>}
+                  <Icon className="w-5 h-5 shrink-0 mt-0.5 "  />
+                  {!collapsed && <span className="text-sm whitespace-pre-line leading-5">{item.name}</span>}
                 </Link>
               ) : (
                 <div className="group flex items-center gap-3
@@ -94,8 +92,8 @@ const Sidebar = ({ collapsed, setCollapsed }: { collapsed: boolean; setCollapsed
                                 hover:bg-blue-50
                                 hover:text-blue-600
                                 transition-colors duration-200">
-                  <Icon className="w-5 h-5 text-gray-600 group-hover:text-black" />
-                  {!collapsed && <span className="text-sm">{item.name}</span>}
+                  <Icon className="w-5 h-5 text-gray-600 group-hover:text-black shrink-0 mt-0.5" />
+                  {!collapsed && <span className="text-sm whitespace-pre-line leading-5">{item.name}</span>}
                 </div>
               )}
             </li>
