@@ -23,7 +23,8 @@ const menuItems = [
   { name: "Main Page", icon: LayoutDashboard, path: "/" },
   { name: "Project Info", icon: FileText, path: "/project-info" },
   { name: "PSR", icon: BarChart3 , path:"/psr"},
-  { name: "Training", icon: GraduationCap },
+  { name: "Training", icon: GraduationCap, path: "/training" },
+ 
   { name: "Resources", icon: Users },
   { name: "Metrics Planning & Tracking", icon: Activity },
   { name: "Risk Management", icon: AlertTriangle },
