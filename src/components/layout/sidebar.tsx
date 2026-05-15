@@ -25,7 +25,7 @@ const menuItems = [
   { name: "PSR", icon: BarChart3 , path:"/psr"},
   { name: "Training", icon: GraduationCap, path: "/training" },
  
-  { name: "Resources", icon: Users },
+  { name: "Resources", icon: Users , path: "/resources"},
   { name: "Metrics Planning & Tracking", icon: Activity },
   { name: "Risk Management", icon: AlertTriangle },
   { name: "Size, Schedule & Effort", icon: CalendarDays },
